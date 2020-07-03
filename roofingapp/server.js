@@ -6,12 +6,14 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080; 
 
-mongoose.connect ('mongodb://localhost/roofing_leads', {
+const MONGODB_URI = 'mongodb+srv://manuelr14:leaddatabase@cluster0-h1cps.mongodb.net/<dbname>?retryWrites=true&w=majority'
+mongoose.connect (MONGODB_URI || 'mongodb://localhost/roofing_leads', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 
 });
 
+// leaddatabase
 mongoose.connection.on('connected',() => {
     console.log('Mongoose is connected!!')
 });
