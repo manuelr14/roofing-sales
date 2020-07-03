@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 8080;
 
 app.use(morgan('tiny')); 
 
-app.get('api/user',(req,res)=>{
+app.get('/api/user',(req,res)=>{
     const data = {
-        username: 'manuelr114',
+        username: 'manuelr14',
         age: 32
     };
     res.json(data);
