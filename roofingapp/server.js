@@ -18,6 +18,35 @@ mongoose.connection.on('connected',() => {
     console.log('Mongoose is connected!!')
 });
 
+const Schema = mongoose.Schema;
+const CustomerSchema = new Schema({
+    name: String,
+    lastname: String,
+    phone: Number,
+    address: String, 
+    date:{
+        type: String,
+        default: Date.now()
+    }
+});
+
+const Customer = mongoose.model('Customer',CustomerSchema);
+
+const data = {
+    name: 'Jessika',
+    lastname: 'Ramirez',
+    phone: 4045555555,
+    address: '847 parc river blvd'
+};
+
+const newCustomer = new Customer(data);
+newCustomer.save((error) => {
+    if (error) {
+        console.log( 'something happened');
+    }else {
+        console.log( 'data saved!');
+    }
+});
 
 app.use(morgan('tiny')); 
 
