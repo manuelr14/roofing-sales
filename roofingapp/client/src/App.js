@@ -10,24 +10,24 @@ import Login from './pages/login';
 class App extends Component {
 	render() {
 		return (
-			// <Router>
+			<Router>
 				<div className="App">
 					<Navbar />
 
-					{/* <Switch>
+					 <Switch>
 						<Route exact path={[ '/' ]}>
-							<Customer />
+							<Newcustomer />
 						</Route>
-						<Route exact path={[ '/newcustomer' ]}>
+						{/* <Route exact path={[ '/newcustomer' ]}>
 							<Newcustomer />
 						</Route>
 						<Route exact path={[ '/login' ]}>
 							<Login />
-						</Route>
+						</Route> */}
 						
-					</Switch> */}
+					</Switch> 
 				</div>
-			// </Router>
+		 </Router>
 		);
 	}
 }
