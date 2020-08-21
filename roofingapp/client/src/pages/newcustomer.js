@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import SaveIcon from '@material-ui/icons/Save';
 import Icon from '@material-ui/core/Icon';
+import axios from 'axios';
+
 
 class App extends React.Component {
 
@@ -48,6 +50,45 @@ handleChange = (event) => {
     });
 };
 
+submit = (event) => {
+    event.preventDefault();
+
+    const payload =  {
+    
+    name1: this.state.name1,
+    lastname1: this.state.lastname1,
+    phone1: this.state.phone1,
+    email1: this.state.email1,
+    dob1: this.state.dob1,
+    name2: this.state.name2,
+    lastname2: this.state.lastname2,
+    phone2: this.state.phone2,
+    email2: this.state.email2,
+    dob2: this.state.dob2,
+    street: this.state.street,
+    city: this.state.city,
+    state: this.state.state,
+    zip: this.state.zip,
+    stories: this.state.stories,
+    inscomp: this.state.inscomp,
+    policynum: this.state.policynum,
+    topolicy: this.state.topolicy,
+    deductible: this.state.deductible
+    }
+
+    axios({
+        url: '/api/save',
+        method: 'POST',
+        data: payload
+    }).then(() => {
+        console.log ('Data has been sent to the server');
+    }).catch(() => {
+        console.log('Internal error')
+    });
+    
+
+}
+
 render(){
 
     console.log('State', this.state);
@@ -56,7 +97,7 @@ render(){
 //     const classes = useStyles();
 
     return (
-        <form  noValidate autoComplete="off">
+        <form onSubmit={this.submit} noValidate autoComplete="off">
 
             <h1> Homeowner's Information</h1>
             <div>
@@ -104,7 +145,7 @@ render(){
                 />
             </div>
 
-            <h2>Secundary</h2>
+            <h2>Secondary</h2>
 
             <div>
 
@@ -247,9 +288,11 @@ style={{marginTop: '30px'}}
 // className={classes.button}
 startIcon={<SaveIcon />}
 >
-Save
+submit
 </Button>
 </div>
+
+<button>submit</button>
 
         </form>
 

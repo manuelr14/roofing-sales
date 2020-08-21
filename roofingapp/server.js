@@ -54,7 +54,7 @@ mongoose.connection.on('connected',() => {
 // });
 
 app.use(morgan('tiny')); 
-app.use('/', routes);
+app.use('/api', routes);
 
 
 
