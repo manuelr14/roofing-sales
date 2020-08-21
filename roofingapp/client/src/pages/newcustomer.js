@@ -2,6 +2,8 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -10,6 +12,32 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
+
+// state = {
+//     name1:'',
+//     lastname1:'',
+//     phone1:'',
+//     email1:'',
+//     dob1:'',
+//     name2:'',
+//     lastname2:'',
+//     phone2:'',
+//     email2:'',
+//     dob2:'',
+//     street:'',
+//     city:'',
+//     state:'',
+//     zip:'',
+//     stories:'',
+//     inscomp:'',
+//     policyn:'',
+//     topolicy:'',
+//     deductible:'',
+
+    
+
+
+// }
 
 export default function FormPropsTextFields() {
     const classes = useStyles();
@@ -20,7 +48,10 @@ export default function FormPropsTextFields() {
             <h1> Homeowner's Information</h1>
             <div>
 
-                <TextField id="outlined-search" label="Name" type="search" variant="outlined" />
+                <TextField 
+                id="outlined-search" 
+                label="Name" 
+                type="search" variant="outlined" />
 
                 <TextField id="outlined-search" label="Last Name" type="search" variant="outlined" />
 
