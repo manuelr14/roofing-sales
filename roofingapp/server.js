@@ -27,6 +27,9 @@ const routes = require('./routes/api');
 mongoose.connection.on('connected',() => {
     console.log('Mongoose is connected!!')
 });
+//make all the requests uncoded 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 
 
