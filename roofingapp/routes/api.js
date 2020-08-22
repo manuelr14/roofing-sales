@@ -17,15 +17,28 @@ router.get('/user', (req, res) => {
 });
 
 router.post('/save', (req, res) => {
-    console.log('Body: ', req.body)
+    console.log('Body: ', req.body);
+    const data = req.body;
+
+    const newCustomer = new Customer(data);
+    newCustomer.save((error) => {
+        if (error) {
+            res.status(500).json({ msg: 'Sorry, internal server errors' });
+           return;
+        }
+        return res.json({
+            msg: 'Your data has been saved!!!'
+        });
+
+    });
 
     res.json({
-        msg: 'we reveived your data!!'
+        msg: 'we received your data!!'
     });
 
 
 
 });
-   
+
 
 module.exports = router;

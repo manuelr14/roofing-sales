@@ -40,14 +40,9 @@ state = {
     deductible:''
 }
 
-handleChange = (event) => {
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
-
-    this.setState({
-        [name]:value
-    });
+handleChange = ({target}) => {
+const { name, value } = target;
+this.setState({ [name]: value });
 };
 
 submit = (event) => {
@@ -60,20 +55,20 @@ submit = (event) => {
     phone1: this.state.phone1,
     email1: this.state.email1,
     dob1: this.state.dob1,
-    // name2: this.state.name2,
-    // lastname2: this.state.lastname2,
-    // phone2: this.state.phone2,
-    // email2: this.state.email2,
-    // dob2: this.state.dob2,
-    // street: this.state.street,
-    // city: this.state.city,
-    // state: this.state.state,
-    // zip: this.state.zip,
-    // stories: this.state.stories,
-    // inscomp: this.state.inscomp,
-    // policynum: this.state.policynum,
-    // topolicy: this.state.topolicy,
-    // deductible: this.state.deductible
+    name2: this.state.name2,
+    lastname2: this.state.lastname2,
+    phone2: this.state.phone2,
+    email2: this.state.email2,
+    dob2: this.state.dob2,
+    street: this.state.street,
+    city: this.state.city,
+    state: this.state.state,
+    zip: this.state.zip,
+    stories: this.state.stories,
+    inscomp: this.state.inscomp,
+    policynum: this.state.policynum,
+    topolicy: this.state.topolicy,
+    deductible: this.state.deductible
     }
 
     axios({
@@ -82,12 +77,37 @@ submit = (event) => {
         data: payload
     }).then(() => {
         console.log ('Data has been sent to the server');
+        this.resetUserInputs();
     }).catch(() => {
         console.log('Internal error')
     });
-    
-
 }
+    resetUserInputs = () => {
+        this.setState({
+            name1:'',
+            lastname1:'',
+            phone1:'',
+            email1:'',
+            dob1:'',
+            name2:'',
+            lastname2:'',
+            phone2:'',
+            email2:'',
+            dob2:'',
+            street:'',
+            city:'',
+            state:'',
+            zip:'',
+            stories:'',
+            inscomp:'',
+            policynum:'',
+            topolicy:'',
+            deductible:''  ,
+
+        });
+    };
+
+
 
 render(){
 

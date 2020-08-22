@@ -5,12 +5,25 @@ const Schema = mongoose.Schema;
 
 //damos el nombre del schema, le definimos los parametros y lo creamos
 const CustomerSchema = new Schema({
-    name: String,
-    lastname: String,
-    phone: Number,
+    name1: String,
+    lastname1: String,
+    phone1: Number,
+    email1: String,
+    dob1:String,
+    name2: String,
+    lastname2: String,
+    phone2: Number,
+    email2: String,
+    dob2: String,
     street: String,
     city: String,
-    zip: Number, 
+    state: String,
+    zip: String,
+    stories: String,
+    inscomp: String,
+    policynum: String,
+    topolicy: String,
+    deductible: Number,
     date:{
         type: String,
         default: Date.now()
