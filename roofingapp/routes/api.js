@@ -32,9 +32,7 @@ router.post('/save', (req, res) => {
 
     });
 
-    res.json({
-        msg: 'we received your data!!'
-    });
+    
 
 
 
