@@ -125,7 +125,7 @@ render(){
                 <TextField 
                 id="outlined-search" 
                 label="Name" 
-                type="string" 
+                type="search" 
                 variant="outlined" 
                 name="name1"
                 value={this.state.name1}
@@ -133,14 +133,16 @@ render(){
                 />
 
                 <TextField id="outlined-search" 
-                label="Last Name" type="search" 
+                label="Last Name"
+                type="search" 
                 variant="outlined"
                 name="lastname1"
                 value={this.state.lastname1}
                 onChange={this.handleChange} />
 
                 <TextField id="outlined-search" 
-                label="Date of Birth" type="date" 
+                label="Date of Birth" 
+                type="date" 
                 input="date" variant="outlined" 
                 InputLabelProps={{ shrink: true, }}
                 name="dob1"
@@ -172,7 +174,7 @@ render(){
             <TextField 
                 id="outlined-search" 
                 label="Name" 
-                type="string" 
+                type="search" 
                 variant="outlined" 
                 name="name2"
                 value={this.state.name2}
@@ -180,14 +182,16 @@ render(){
                 />
 
                 <TextField id="outlined-search" 
-                label="Last Name" type="search" 
+                label="Last Name" 
+                type="search" 
                 variant="outlined"
                 name="lastname2"
                 value={this.state.lastname2}
                 onChange={this.handleChange} />
 
                 <TextField id="outlined-search" 
-                label="Date of Birth" type="date" 
+                label="Date of Birth" 
+                type="date" 
                 input="date" variant="outlined" 
                 InputLabelProps={{ shrink: true, }}
                 name="dob2"
@@ -254,7 +258,7 @@ render(){
                 type="number" 
                 input="date" 
                 variant="outlined" 
-                InputLabelProps={{ shrink: true, }}
+                InputLabelProps={{ shrink: true }}
                 name="stories"
                 value={this.state.stories}
                 onChange={this.handleChange} />

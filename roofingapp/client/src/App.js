@@ -4,7 +4,7 @@ import Navbar from './components/navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Customer from './pages/customer';
 import Newcustomer from './pages/newcustomer';
-import Login from './pages/login';
+import Allcustomers from './pages/allcustomers';
 
 
 class App extends Component {
@@ -18,12 +18,12 @@ class App extends Component {
 						<Route exact path={[ '/' ]}>
 							<Newcustomer />
 						</Route>
-						{/* <Route exact path={[ '/newcustomer' ]}>
+						 <Route exact path={[ '/newcustomer' ]}>
 							<Newcustomer />
 						</Route>
-						<Route exact path={[ '/login' ]}>
-							<Login />
-						</Route> */}
+						<Route exact path={[ '/allcustomers' ]}>
+							<Allcustomers />
+						</Route> 
 						
 					</Switch> 
 				</div>

@@ -13,8 +13,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-
+import Link from '@material-ui/core/Link'
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -22,12 +21,33 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+   navbutton:{
+     marginLeft:'15px'
+   },
+
   title: {
+
     display: 'none',
+    // padding: '10px',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
+  // search: {
+  //   position: 'relative',
+  //   borderRadius: theme.shape.borderRadius,
+  //   backgroundColor: fade(theme.palette.common.white, 0.15),
+  //   '&:hover': {
+  //     backgroundColor: fade(theme.palette.common.white, 0.25),
+  //   },
+  //   marginRight: theme.spacing(2),
+  //   marginLeft: 0,
+  //   width: '100%',
+  //   [theme.breakpoints.up('sm')]: {
+  //     marginLeft: theme.spacing(1),
+  //     width: 'auto',
+  //   },
+  // },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -35,11 +55,10 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(1),
       width: 'auto',
     },
   },
@@ -160,7 +179,7 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-
+  const preventDefault = (event) => event.preventDefault();
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -174,9 +193,16 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            <Link  to="/"  onClick={preventDefault} color="inherit">
+              Pro-Roofing
+             </Link>
+            <Link to={`/newcustomer`} className={classes.navbutton}  color="inherit">
+              New customer
+            </Link>
           </Typography>
-          <div className={classes.search}>
+
+
+          <div className={classes.search} >
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -220,7 +246,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+
             </IconButton>
           </div>
         </Toolbar>
