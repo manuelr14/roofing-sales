@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Customer from './pages/customer';
 import Newcustomer from './pages/newcustomer';
 import Allcustomers from './pages/allcustomers';
+import Login from './pages/login';
 
 
 class App extends Component {
@@ -23,6 +24,9 @@ class App extends Component {
 						</Route>
 						<Route exact path={[ '/allcustomers' ]}>
 							<Allcustomers />
+						</Route> 
+						<Route exact path={[ '/login' ]}>
+							<Login />
 						</Route> 
 						
 					</Switch> 
